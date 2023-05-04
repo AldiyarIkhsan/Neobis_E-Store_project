@@ -6,7 +6,6 @@ from .models import User
 import datetime
 import jwt
 
-
 class RegisterView(APIView):
     def post(self, request):
         seriazlizer = UserSerializer(data=request.data)
@@ -33,7 +32,7 @@ class LoginView(APIView):
             'iat': datetime.datetime.utcnow()
         }
 
-        token = jwt.encode(payload, 'secret', algorithm='HS256').decode('utf-8')
+        token = jwt.encode(payload, 'secret', algorithm='HS256')
 
         response = Response()
 
