@@ -16,5 +16,3 @@ class OrderSerializer(serializers.ModelSerializer):
         instance = Order.objects.create(summ=sum_price, **validated_data)
         instance.products.set(products)
         return instance
-
-
