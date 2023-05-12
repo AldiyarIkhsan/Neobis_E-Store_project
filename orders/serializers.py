@@ -17,6 +17,4 @@ class OrderSerializer(serializers.ModelSerializer):
         instance.products.set(products)
         return instance
 
-    def update(self, instance, validated_data):
-
 
